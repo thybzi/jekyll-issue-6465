@@ -1,0 +1,19 @@
+---
+title: "'listing' page"
+---
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>url</th>
+        <th>behavior type</th>
+        <th>proof</th>
+    </tr>
+{% for item in site.pages %}
+    {% if item.url != page.url %}
+    <tr>
+        <td>{{ item.url }}</td>
+        <td>{{ item.title }}</td>
+        <td style="color:red">{{ item.content }}</td>
+    </tr>
+    {% endif %}
+{% endfor %}
+</table>
